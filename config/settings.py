@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 from os.path import join
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_DIR = os.path.dirname(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -74,7 +75,7 @@ LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'Europe/Paris'
 
-USE_I18N = False#True
+USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
@@ -83,10 +84,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = join(PROJECT_DIR,"static")
 
 TEMPLATE_DIRS = (
     join(BASE_DIR,'templates'),
 )
+
+
 STATICFILES_DIRS = (
     join(BASE_DIR, "static"),
 )
