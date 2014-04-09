@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="row homepage">
+    <div class="homepage">
         {% for shop in shop_list %}
-            {% include "shops/shop.html" %}
-        {% endfor %}
+                {% include "shops/shop.html" with short=True %}
+            {% endfor %}
     </div>
 {% endblock %}
