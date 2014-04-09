@@ -1,0 +1,21 @@
+<div class="shop">
+    <img class="thumbnail" src="http://commercesdepont.fr/wp-content/uploads/{{ shop.image }}" />
+    <h4 class="name">
+        <a href="{% url 'shop' shop.slug %}">{{ shop.name }}</a>
+    </h4>
+    <div class="website">
+        <label>Site web:</label> <a href="{{ shop.website }}">{{ shop.website }}</a>
+    </div>
+    <div class="phone">
+        <label>Tel.:</label> {{ shop.phone}}
+    </div>
+    <div class="timetable">
+        <label>Horaires:</label> {{ shop.timetable}}
+    </div>
+    <div class="address">
+        <label>Adresse:</label> {{ shop.address }}, 60700 Pont-Sainte-Maxence
+    </div>
+    <p class="description">
+        {{ shop.description|striptags }}
+    </p>
+</div>

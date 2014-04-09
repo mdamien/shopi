@@ -6,7 +6,8 @@ from shops.models import Shop
 def run():
     Shop.objects.all().delete()
 
-    easy = "title->name site->website adresse->address tel->phone horaires->timetable content->description category->categories private_mail->email"
+    easy = "title->name site->website adresse->address tel->phone horaires->timetable"
+    easy += " content->description category->categories private_mail->email image_min->image"
     easy = list(s.split("->") for s in easy.split())
 
     shops = json.load(open('scripts/shops.json'))

@@ -2,15 +2,8 @@
 
 {% block content %}
     <div class="row homepage">
-        <h4 class="text-center">Bienvenue sur le site des commercants de Pont-Sainte-Maxence</h4>
-    
         {% for shop in shop_list %}
-        <div class="shop">
-            <h4><a href="{% url 'shop' shop.slug %}">{{ shop.name }}</a></h4>
-            <p>
-            {{ shop.description }}
-            </p>
-        </div>
+            {% include "shops/shop.html" %}
         {% endfor %}
     </div>
 {% endblock %}

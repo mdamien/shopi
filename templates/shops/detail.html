@@ -3,10 +3,5 @@
 {% block title %}{{ shop.name }} - {{ block.super }} {% endblock %}
 
 {% block content %}
-<div class="shop">
-    <h4><a href="{% url 'shop' shop.slug %}">{{ shop.name }}</a></h4>
-    <p>
-    {{ shop.description }}
-    </p>
-</div>
+{% include "shops/shop.html" %}
 {% endblock %}
