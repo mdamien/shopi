@@ -61,3 +61,10 @@ margin: 20px 0px;
 }
     
 
+
+#search {
+max-width: 340px;
+display: inline;
+height: 46px;
+font-size: 2rem;
+}

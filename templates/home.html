@@ -3,14 +3,38 @@
 {% block content %}
 <div class="container-fluid">
     <div class="homepage row-fluid text-center">
+        <div class="search-form text-center">
+            <input type="text" id="search" class="form-control" placeholder="Que recherchez vous ?"/>
+        </div>
         {% for shop in shop_list %}
         <a href="{% url 'shop' shop.slug %}">
-        <div class="shop shop-homepage">
-            <img src="http://commercesdepont.fr/wp-content/uploads/{{ shop.image }}" />
-            <h4>{{ shop.name }}</h4>
-        </div>
+            <div class="shop shop-homepage" 
+                data-filtering="{{ shop.name }}
+                {{ shop.categories }}
+                {{ shop.description }}
+                {{ shop.website }}">
+                 <img src="http://commercesdepont.fr/wp-content/uploads/{{ shop.image }}" />
+                 <h4>{{ shop.name }}</h4>
+            </div>
         </a>
         {% endfor %}
     </div>
 </div>
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+<script>
+function refresh(){
+    var filter = $('#search').get(0).value;
+    $('.shop').each(function(i,shop){   
+        if(filter != "" && $(shop).attr("data-filtering").toLowerCase().indexOf(filter.toLowerCase()) == -1){
+            $(shop).hide()
+        }else{
+            $(shop).show()
+        }
+    })
+}
+$('#search').keyup(refresh);
+</script>
 {% endblock %}
