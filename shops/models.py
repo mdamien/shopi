@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.urlresolvers import reverse
-from django.core import serializers
 
 class Shop(models.Model):
     name = models.CharField(max_length=255)
@@ -17,9 +16,9 @@ class Shop(models.Model):
     categories = models.CharField(max_length=255)
     lat = models.FloatField(null=True)
     lng = models.FloatField(null=True)
-
-    def as_json(self):
-        return serializers.serialize("json",self)
+   
+    class Meta:
+        ordering = ('name',)
 
     def get_absolute_url(self):
         return reverse('shop',args=(self.slug,))
