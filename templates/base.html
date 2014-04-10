@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>{% block title %}Commercesdepont.fr{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% block css %}
 <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 <link href="{% static 'css/style.css' %}" rel="stylesheet">
@@ -21,10 +22,9 @@
         </ul>
         <h3 class="text-muted">Commercesdepont.fr</h3>
     </div>
-
+</div>
 {% block content %}
 {% endblock %}
-</div>
 
 {% block js %}
 {# <script src="{% static "js/jquery.js" %}"></script> <script src="{% static "js/bootstrap.js" %}"></script> #}

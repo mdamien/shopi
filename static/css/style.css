@@ -41,8 +41,23 @@ border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 padding: 20px;
 margin: 20px 0px;
 }
-    
-.homepage .shop img {
-    height:150px
-    float: right;
+
+
+
+.shop-homepage {
+    display: inline-block;
+    /* min-width: 224px; */
+    padding: 5px;
+    margin: 19px;
 }
+.shop-homepage img {
+    max-width: 100%;
+    max-height: 100px;
+    text-align: center;
+}
+.shop-homepage h4 {
+    color: rgb(70, 70, 70);
+    
+}
+    
+
